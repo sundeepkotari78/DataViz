@@ -1,0 +1,75 @@
+body {
+  text-align: center;
+}
+.chart {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 60px auto;
+  position: relative;
+  list-style: none;
+  padding: 0;
+}
+.y {
+  position: absolute;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+  bottom: 0;
+  padding: 5px;
+}
+.x {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 5px;
+}
+svg {
+  position: absolute;
+  transform: rotateX(180deg);
+  left: 0;
+}
+line {
+  stroke: red;
+  stroke-width: 3px;
+}
+.dots {
+  background: blue;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+}
+.dots span {
+  display: none;
+  position: absolute;
+  background: green;
+  color: white;
+  border-radius: 3px;
+  padding: 5px;
+  white-space: nowrap;
+  z-index: 9999;
+}
+.dots:hover span {
+  display: block;
+}
+.bar {
+  background: blue;
+  position: absolute;
+  bottom: 0;
+}
+.bar:nth-of-type(even) {
+  background: green;
+}
+.bar span {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: rotate(-90deg) translateY(-50%);
+  transform-origin: left top;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+.bar:hover span {
+  opacity: 1;
+}
